@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT timetable (days)>
+
+<!-- Schedule by day........................................................ -->
+<!ELEMENT days (day+)>
+
+<!ELEMENT day (day-slot+)>
+<!ATTLIST day
+    which (mon|tue|wed|thu|fri) #REQUIRED
+  >
+
+<!ELEMENT day-slot (type,instructor,room)>
+<!ATTLIST day-slot
+    period (0830|0930|1030|1130|1230|1330|1430|1530|1630) #REQUIRED
+    course (ACIT4620|ACIT4650|ACIT4660|ACIT4770|ACIT4850|ACIT4910) #REQUIRED
+  >
+
+<!ELEMENT type (#PCDATA)>
+
+<!ELEMENT instructor (#PCDATA)>
+
+<!ELEMENT room (#PCDATA)>
+
+<!-- Schedule by time....................................................... -->
+
+<!-- Schedule by course..................................................... -->

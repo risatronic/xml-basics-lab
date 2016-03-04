@@ -16,7 +16,9 @@ Doig, Marisa:
     - 
 
 Fernandez de Arteaga, Erick:
-    - 
+    - Master XML (/data/timetable.xml)
+    - Day XML (/data/day.xml)
+    - Master DTD definition for day (/data/timetable.dtd)
 
 --------------------------------------------------------------------------------
     For Developers
