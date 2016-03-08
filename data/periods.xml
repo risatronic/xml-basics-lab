@@ -1,0 +1,19 @@
+<periods>
+    <period which="0930">
+        <period-slot day="tue" course="ACIT4620">
+            <type>Lab</type>
+            <instructor>Bethany Edmunds</instructor>
+            <room>SE12-306</room>
+        </period-slot>
+        <period-slot day="thu" course="ACIT4910">
+            <type>Lec</type>
+            <instructor>Richard Chau</instructor>
+            <room>SW5-1840</room>
+        </period-slot>
+        <period-slot day="fri" course="ACIT4660">
+            <type>Lec</type>
+            <instructor>Steve Fabiszewski</instructor>
+            <room>SW9-206</room>
+        </period-slot>
+    </period>
+</periods>
