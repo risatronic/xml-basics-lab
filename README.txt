@@ -13,7 +13,8 @@ Team Members:
 --------------------------------------------------------------------------------
 
 Doig, Marisa:
-    - 
+    - Courses XML (/data/courses.xml)
+    - Periods XML (/data/periods.xml)
 
 Fernandez de Arteaga, Erick:
     - Master XML (/data/timetable.xml)
