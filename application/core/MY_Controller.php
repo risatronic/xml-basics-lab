@@ -4,15 +4,16 @@
  *
  * Default application controller
  */
-class Application extends CI_Controller {
+class Application extends CI_Controller 
+{
     
     protected $data = array();      // parameters for view components
     protected $id;		  // identifier for our content
     protected $choices = array(// our menu navbar
-	'Home' => '/', 'Gallery' => '/gallery', 'About' => '/about'
+	'Home' => '/'
     );
     
-	/**
+    /**
      * Constructor.
      * Establish view parameters & load common helpers
      */
@@ -21,7 +22,7 @@ class Application extends CI_Controller {
 	parent::__construct();
 
 	$this->data = array();
-	$this->data['pagetitle'] = 'Sample Image Gallery';
+	$this->data['pagetitle'] = 'ACIT 4A Timetable Data';
     }
     /**
      * Render this page

@@ -1,24 +1,24 @@
 <days>
     <day which="mon">
-        <day-slot period="1030" course="ACIT4650">
+        <dayslot period="1030" course="ACIT4650">
             <type>Lab</type>
             <instructor>Medhat Elmasry</instructor>
             <room>SE12-306</room>
-        </day-slot>
-        <day-slot period="1130" course="ACIT4650">
+        </dayslot>
+        <dayslot period="1130" course="ACIT4650">
             <type>Lab</type>
             <instructor>Medhat Elmasry</instructor>
             <room>SE12-306</room>
-        </day-slot>
-        <day-slot period="1530" course="ACIT4650">
+        </dayslot>
+        <dayslot period="1530" course="ACIT4910">
             <type>Lec</type>
             <instructor>Richard Chau</instructor>
             <room>SW9-206</room>
-        </day-slot>
-        <day-slot period="1630" course="ACIT4650">
+        </dayslot>
+        <dayslot period="1630" course="ACIT4650">
             <type>Lec</type>
             <instructor>Medhat Elmasry</instructor>
             <room>SE6-205</room>
-        </day-slot>
+        </dayslot>
     </day>
 </days>
