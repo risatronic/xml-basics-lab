@@ -2,16 +2,16 @@
 
 <!ELEMENT timetable (days,periods,courses)>
 
-<!-- Schedule by day........................................................ -->
+<!-- Timetable by day ...................................................... -->
 <!ELEMENT days (day+)>
 
-<!ELEMENT day (day-slot+)>
+<!ELEMENT day (dayslot+)>
 <!ATTLIST day
-    which (mon|tue|wed|thu|fri) #REQUIRED
+    which (Monday|Tuesday|Wednesday|Thursday|Friday) #REQUIRED
   >
 
-<!ELEMENT day-slot (type,instructor,room)>
-<!ATTLIST day-slot
+<!ELEMENT dayslot (type,instructor,room)>
+<!ATTLIST dayslot
     period (0830|0930|1030|1130|1230|1330|1430|1530|1630) #REQUIRED
     course (ACIT4620|ACIT4650|ACIT4660|ACIT4770|ACIT4850|ACIT4910) #REQUIRED
   >
@@ -22,30 +22,30 @@
 
 <!ELEMENT room (#PCDATA)>
 
-<!-- Schedule by time....................................................... -->
+<!-- Timetable by time ..................................................... -->
 <!ELEMENT periods (period+)>
 
-<!ELEMENT period (period-slot+)>
+<!ELEMENT period (periodslot+)>
 <!ATTLIST period
     which (0830|0930|1030|1130|1230|1330|1430|1530|1630) #REQUIRED
   >
 
-<!ELEMENT period-slot (type,instructor,room)>
-<!ATTLIST period-slot
-    day (mon|tue|wed|thu|fri) #REQUIRED
+<!ELEMENT periodslot (type,instructor,room)>
+<!ATTLIST periodslot
+    day (Monday|Tuesday|Wednesday|Thursday|Friday) #REQUIRED
     course (ACIT4620|ACIT4650|ACIT4660|ACIT4770|ACIT4850|ACIT4910) #REQUIRED
   >
 
-<!-- Schedule by course..................................................... -->
+<!-- Timetable by course ................................................... -->
 <!ELEMENT courses (course+)>
 
-<!ELEMENT course (course-slot+)>
+<!ELEMENT course (courseslot+)>
 <!ATTLIST course
     which (ACIT4620|ACIT4650|ACIT4660|ACIT4770|ACIT4850|ACIT4910) #REQUIRED
   >
 
-<!ELEMENT course-slot (type,instructor,room)>
-<!ATTLIST course-slot
-    day (mon|tue|wed|thu|fri) #REQUIRED
+<!ELEMENT courseslot (type,instructor,room)>
+<!ATTLIST courseslot
+    day (Monday|Tuesday|Wednesday|Thursday|Friday) #REQUIRED
     period (0830|0930|1030|1130|1230|1330|1430|1530|1630) #REQUIRED
   >
