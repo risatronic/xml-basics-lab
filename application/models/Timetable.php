@@ -102,15 +102,8 @@ class Slot extends CI_Model
         // Set the slot values from the XML elements provided.
         
         // Replace the value for day with the full day name.
-        switch((String) (isset($slot['day']) ? $slot['day'] : $container['which']))
-        {
-            case 'mon': $this->day = 'Monday'; break;
-            case 'tue': $this->day = 'Tuesday'; break;
-            case 'wed': $this->day = 'Wednesday'; break;
-            case 'thu': $this->day = 'Thursday'; break;
-            case 'fri': $this->day = 'Friday'; break;
-        }
-        
+        $this->day = (String) 
+                (isset($slot['day']) ? $slot['day'] : $container['which']);
         $this->period = (String) 
                 (isset($slot['period']) ? $slot['period'] : $container['which']);
         $this->course = (String) 
