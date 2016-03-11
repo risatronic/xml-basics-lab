@@ -1,24 +1,24 @@
 <courses>
     <course which="ACIT4650">
-        <course-slot day="mon" period="1030">
+        <courseslot day="mon" period="1030">
             <type>Lab</type>
             <instructor>Medhat Elmasry</instructor>
             <room>SE12-306</room>
-        </course-slot>
-        <course-slot day="mon" period="1130">
+        </courseslot>
+        <courseslot day="mon" period="1130">
             <type>Lab</type>
             <instructor>Medhat Elmasry</instructor>
             <room>SE12-306</room>
-        </course-slot>
-        <course-slot day="mon" period="1630">
+        </courseslot>
+        <courseslot day="mon" period="1630">
             <type>Lec</type>
             <instructor>Medhat Elmasry</instructor>
             <room>SE6-205</room>
-        </course-slot>
-        <course-slot day="tue" period="1230">
+        </courseslot>
+        <courseslot day="tue" period="1230">
             <type>Lec</type>
             <instructor>Medhat Elmasry</instructor>
             <room>SW9-206</room>
-        </course-slot>
+        </courseslot>
     </course>
 </courses>

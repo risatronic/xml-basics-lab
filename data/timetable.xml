@@ -1,13 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE timetable SYSTEM "timetable.dtd"
-    [
+<!DOCTYPE timetable SYSTEM "timetable.dtd">
+    <!--[
         <!ENTITY days SYSTEM "days.xml">
         <!ENTITY periods SYSTEM "periods.xml">
         <!ENTITY courses SYSTEM "courses.xml">
-    ]>
+    ]> -->
 
 <timetable>
-    &days;
-    &periods;
-    &courses;
+    <days>
+    <day which="mon">
+        <dayslot period="1030" course="ACIT4650">
+            <type>Lab</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SE12-306</room>
+        </dayslot>
+        <dayslot period="1130" course="ACIT4650">
+            <type>Lab</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SE12-306</room>
+        </dayslot>
+        <dayslot period="1530" course="ACIT4910">
+            <type>Lec</type>
+            <instructor>Richard Chau</instructor>
+            <room>SW9-206</room>
+        </dayslot>
+        <dayslot period="1630" course="ACIT4650">
+            <type>Lec</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SE6-205</room>
+        </dayslot>
+    </day>
+    </days>
+    
+    <periods>
+    <period which="0930">
+        <periodslot day="tue" course="ACIT4620">
+            <type>Lab</type>
+            <instructor>Bethany Edmunds</instructor>
+            <room>SE12-306</room>
+        </periodslot>
+        <periodslot day="thu" course="ACIT4910">
+            <type>Lec</type>
+            <instructor>Richard Chau</instructor>
+            <room>SW5-1840</room>
+        </periodslot>
+        <periodslot day="fri" course="ACIT4660">
+            <type>Lec</type>
+            <instructor>Steve Fabiszewski</instructor>
+            <room>SW9-206</room>
+        </periodslot>
+    </period>
+    </periods>
+    
+    <courses>
+    <course which="ACIT4650">
+        <courseslot day="mon" period="1030">
+            <type>Lab</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SE12-306</room>
+        </courseslot>
+        <courseslot day="mon" period="1130">
+            <type>Lab</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SE12-306</room>
+        </courseslot>
+        <courseslot day="mon" period="1630">
+            <type>Lec</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SE6-205</room>
+        </courseslot>
+        <courseslot day="tue" period="1230">
+            <type>Lec</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SW9-206</room>
+        </courseslot>
+    </course>
+    </courses>
 </timetable>

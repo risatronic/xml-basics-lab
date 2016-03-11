@@ -20,6 +20,14 @@ Fernandez de Arteaga, Erick:
     - Master XML (/data/timetable.xml)
     - Master DTD (/data/timetable.dtd)
     - Days XML (/data/days.xml)
+    - Timetable model (/application/models/Timetable.php)
+    - Welcome controller (/application/controllers/welcome.php)
+    - _template view (/application/views/_template.php)
+    - Welcome view (/application/views/welcome.php)
+    - Welcome_days view fragment (/application/views/welcome_days.php)
+    - Welcome_periods view fragment (/application/views/welcome_periods.php)
+    - Welcome_courses view fragment (/application/views/welcome_courses.php)
+    - Main CSS file (/assets/css/main.css)
 
 --------------------------------------------------------------------------------
     For Developers
