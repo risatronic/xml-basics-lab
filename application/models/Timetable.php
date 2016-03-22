@@ -77,6 +77,135 @@ class Timetable extends CI_Model
     {
         return $this->courses;
     }
+    
+    //--------------------------------------------------------------------------
+    //  List Builders
+    //--------------------------------------------------------------------------
+    
+    /**
+     * Gets a list of all weekdays.
+     */
+    public function getDayList()
+    {
+        $dayList = array(
+            'Monday' => array(
+                'value' => 'Monday'
+            ),
+            'Tuesday' => array(
+                'value' => 'Tuesday'
+            ),
+            'Wednesday' => array(
+                'value' => 'Wednesday'
+            ),
+            'Thursday' => array(
+                'value' => 'Thursday'
+            ),
+            'Friday' => array(
+                'value' => 'Friday'
+            )
+        );
+        
+        return $dayList;
+    }
+    
+    /**
+     * Gets a list of a few periods.
+     */
+    public function getPeriodList()
+    {
+        $periodList = array(
+            '0830' => array(
+                'value' => '0830'
+            ),
+            '0930' => array(
+                'value' => '0930'
+            ),
+            '1030' => array(
+                'value' => '1030'
+            ),
+            '1130' => array(
+                'value' => '1130'
+            ),
+            '1230' => array(
+                'value' => '1230'
+            ),
+            '1330' => array(
+                'value' => '1330'
+            ),
+            '1430' => array(
+                'value' => '1430'
+            ),
+            '1530' => array(
+                'value' => '1530'
+            ),
+            '1630' => array(
+                'value' => '1630'
+            ),
+        );
+        
+        return $periodList;
+    }
+    
+    //--------------------------------------------------------------------------
+    //  Search Methods
+    //--------------------------------------------------------------------------
+    
+    /**
+     * Search the days array for a particular timeslot.
+     */
+    public function searchDays($searchDay, $searchPeriod)
+    {
+        // Check each dayslot for a match and return if so.
+        foreach ($this->days as $record)
+        {
+            if ($record->day === $searchDay && 
+                    $record->period === $searchPeriod)
+            {
+                return $record;
+            }
+        }
+        
+        // If no match, return null.
+        return null;
+    }
+    
+    /**
+     * Search the periods array for a particular timeslot.
+     */
+    public function searchPeriods($searchDay, $searchPeriod)
+    {
+        // Check each periodslot for a match and return if so.
+        foreach ($this->periods as $record)
+        {
+            if ($record->day === $searchDay && 
+                    $record->period === $searchPeriod)
+            {
+                return $record;
+            }
+        }
+        
+        // If no match, return null.
+        return null;
+    }
+    
+    /**
+     * Search the courses array for a particular timeslot.
+     */
+    public function searchCourses($searchDay, $searchPeriod)
+    {
+        // Check each dayslot for a match and return if so.
+        foreach ($this->courses as $record)
+        {
+            if ($record->day === $searchDay && 
+                    $record->period === $searchPeriod)
+            {
+                return $record;
+            }
+        }
+        
+        // If no match, return null.
+        return null;
+    }
 }
 
 //==============================================================================
