@@ -1,5 +1,5 @@
 <days>
-    <day which="Moday">
+    <day which="Monday">
         <dayslot period="1030" course="ACIT4650">
             <type>Lab</type>
             <instructor>Medhat Elmasry</instructor>

@@ -23,6 +23,7 @@ class Application extends CI_Controller
 
 	$this->data = array();
 	$this->data['pagetitle'] = 'ACIT 4A Timetable Data';
+        $this->data['thisPage'] = '/' . $this->uri->segment(1);
     }
     /**
      * Render this page
