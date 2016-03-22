@@ -9,7 +9,7 @@ class Welcome extends Application
         $this->data['welcome_days'] = $this->welcome_days();
         $this->data['welcome_periods'] = $this->welcome_periods();
         $this->data['welcome_courses'] = $this->welcome_courses();
-        
+
         // Render.
         $this->data['pagebody'] = 'welcome';
         $this->render();

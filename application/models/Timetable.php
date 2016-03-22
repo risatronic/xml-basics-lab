@@ -8,9 +8,22 @@
 class Timetable extends CI_Model
 {
     protected $xml = null;
-    protected $days = array();      // Days timetable facet.
+    protected $days = array();      // Days timetable facet.    
     protected $periods = array();   // Periods timetable facet.
     protected $courses = array();   // Courses timetable facet.
+    
+    //--------------------------------------------------------------------------
+    //  Drop-down Arrays
+    //--------------------------------------------------------------------------
+    
+    //array for day names
+    protected $dayNames = array(Monday=>"Monday", Tuesday=>"Tuesday", 
+            Wednesday=>"Wednesday", Thursday=>"Thursday", Friday=>"Friday");
+    
+    //array for period times
+    protected $periodTimes = array(0830=>"8.30am", 0930=>"9.30am", 1030=>"10.30am",
+            1130=>"11.30am", 1230=>"12.30pm", 1330=>"1.30pm", 1430=>"2.30pm",
+            1530=>"3.30pm", 1630=>"4.30pm");
     
     //--------------------------------------------------------------------------
     //  Constructors
@@ -48,6 +61,7 @@ class Timetable extends CI_Model
                 $this->courses[] = new Slot($courseslot,$course);
             }
         }
+        
     }
     
     //--------------------------------------------------------------------------
@@ -76,6 +90,22 @@ class Timetable extends CI_Model
     public function getCourses()
     {
         return $this->courses;
+    }
+    
+    /**
+     * Returns the array of dayNames
+     */
+    public function getDayNames()
+    {
+        return $this->dayNames;
+    }
+    
+    /**
+     * Returns the array of periodTimes
+     */
+    public function getPeriodTimes()
+    {
+        return $this->periodTimes;
     }
 }
 
