@@ -226,6 +226,10 @@ class Slot extends CI_Model
     public $instructor; // Course instructor.
     public $room;       // Classroom.
     
+    //--------------------------------------------------------------------------
+    //  Constructors
+    //--------------------------------------------------------------------------
+    
     public function __construct($slot, $container)
     {
         // Set the slot values from the XML elements provided.
@@ -240,5 +244,28 @@ class Slot extends CI_Model
         $this->type = (String) $slot->type;
         $this->instructor = (String) $slot->instructor;
         $this->room = (String) $slot->room;
+    }
+    
+    //--------------------------------------------------------------------------
+    //  Utilities
+    //--------------------------------------------------------------------------
+    
+    /**
+     * Compares the current Slot object to one provided as a parameter. Returns
+     * true if all of the variable values are equal and false otherwise.
+     */
+    public function equals($otherSlot)
+    {
+        if(     $this->day === $otherSlot->day &&
+                $this->period === $otherSlot->period &&
+                $this->course === $otherSlot->course &&
+                $this->type === $otherSlot->type &&
+                $this->instructor === $otherSlot->instructor &&
+                $this->room === $otherSlot->room)
+        {
+            return true;
+        }
+        
+        return false;
     }
 }
