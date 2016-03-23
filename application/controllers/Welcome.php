@@ -74,14 +74,9 @@ class Welcome extends Application
         // If there are no nulls returned...
         else
         {
-            // ...and if there is a match, display bingo. Course and type are 
-            // checked to determine match. There is no need to check day or 
-            // period because these were the search values used to select these 
-            // items, so we already know that they match.
-            if ($dayResult->course === $periodResult->course && 
-                    $dayResult->type === $periodResult->type && 
-                    $dayResult->course === $courseResult->course &&
-                    $dayResult->type === $courseResult->type)
+            // ...and if there is a match, display bingo.
+            if (    $dayResult->equals($periodResult) &&
+                    $dayResult->equals($courseResult))
             {
                 // Result values.
                 $this->data['bingoDay'] = $searchDay;
