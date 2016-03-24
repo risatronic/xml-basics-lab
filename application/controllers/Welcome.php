@@ -12,6 +12,7 @@ class Welcome extends Application
         $this->data['welcome_days'] = $this->welcome_days();
         $this->data['welcome_periods'] = $this->welcome_periods();
         $this->data['welcome_courses'] = $this->welcome_courses();
+        $this->data['welcome_xmlvalid'] = $this->welcome_xmlvalid();
         
         // Build form.
         $this->data['welcome_search'] = $this->welcome_search();
@@ -31,6 +32,7 @@ class Welcome extends Application
         $this->data['welcome_days'] = $this->welcome_days();
         $this->data['welcome_periods'] = $this->welcome_periods();
         $this->data['welcome_courses'] = $this->welcome_courses();
+        $this->data['welcome_xmlvalid'] = $this->welcome_xmlvalid();
         
         // Build form.
         $this->data['welcome_search'] = $this->welcome_search();
@@ -121,6 +123,9 @@ class Welcome extends Application
     //  Subview Builders
     //--------------------------------------------------------------------------
     
+    /**
+     * Build the welcome_days subview.
+     */
     private function welcome_days()
     {
         // Get timetable data organized by day.
@@ -134,6 +139,9 @@ class Welcome extends Application
         return $this->parser->parse('welcome_days', $this->data, true);
     }
     
+    /**
+     * Build the welcome_periods subview.
+     */
     private function welcome_periods()
     {
         // Get timetable data organized by period.
@@ -147,6 +155,9 @@ class Welcome extends Application
         return $this->parser->parse('welcome_periods', $this->data, true);
     }
     
+    /**
+     * Build the welcome_courses subview.
+     */
     private function welcome_courses()
     {
         // Get timetable data organized by course.
@@ -160,6 +171,9 @@ class Welcome extends Application
         return $this->parser->parse('welcome_courses', $this->data, true);
     }
     
+    /**
+     * Builds the welcome_search subview.
+     */
     private function welcome_search()
     {
         // Get day list data.
@@ -179,5 +193,21 @@ class Welcome extends Application
         $this->data['periodList'] = $periodRows;
             
         return $this->parser->parse('welcome_search', $this->data, true);
+    }
+    
+    /**
+     * Builds the welcome_xmlvalid subview.
+     */
+    private function welcome_xmlvalid()
+    {
+        // Get XML validation.
+        $rows = array();
+        foreach ($this->timetable->validateTimetable() as $record)
+        {
+            $rows[] = array('message' => $record);
+        }
+        $this->data['xmlValidResults'] = $rows;
+        
+        return $this->parser->parse('welcome_xmlvalid', $this->data, true);
     }
 }

@@ -206,6 +206,39 @@ class Timetable extends CI_Model
         // If no match, return null.
         return null;
     }
+    
+    //--------------------------------------------------------------------------
+    //  Search Methods
+    //--------------------------------------------------------------------------
+    
+    public function validateTimetable()
+    {
+        // Get the XML document properties.
+        $doc = new DOMDocument();
+        $doc->load('./data/timetable.xml');
+        $element = $doc->documentElement;
+        $schema = './data/timetable.xsd';
+        
+        // Use internal errors.
+        libxml_use_internal_errors(true);
+        
+        // Validate XML schema. If validation goes through, return a happy 
+        // message. Else, return the list of errors.
+        if ($doc->schemaValidate($schema))
+        {
+            $result =  array('Yeehaw! Yer XML done val-uh-dated!');
+        }
+        else
+        {
+            $result = array('Shoot! Yer XML dinna val-uh-date, son!<br/>');
+            foreach (libxml_get_errors() as $error) 
+            {
+                $result[] = $error->message;
+            }
+        }
+        
+        return $result;
+    }
 }
 
 //==============================================================================

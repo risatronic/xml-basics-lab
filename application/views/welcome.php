@@ -1,4 +1,5 @@
 <div>
+    {welcome_xmlvalid}
     {welcome_days}
     <br/><br/>
     {welcome_periods}
