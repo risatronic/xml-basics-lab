@@ -5,6 +5,57 @@
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            elementFormDefault="qualified">
 
+    <!-- .......................................................................
+    ..  Common Data Types
+    ........................................................................ -->
+    
+    <!-- A day code, which defines which day of the week its parent slot occurs 
+            on.............................................................. -->
+    <xs:simpleType name="dayCodeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Monday"/>
+            <xs:enumeration value="Tuesday"/>
+            <xs:enumeration value="Wednesday"/>
+            <xs:enumeration value="Thursday"/>
+            <xs:enumeration value="Friday"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- A period code, which defines which period its parent slot occurs on -->
+    <xs:simpleType name="periodCodeType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[012][0-9][0-5][0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- A course code, which defines which course its parent slot contains. -->
+    <xs:simpleType name="courseCodeType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{4}[0-9]{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- A type code, which defines what type of class its parent slot is... -->
+    <xs:simpleType name="typeCodeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Lecture"/>
+            <xs:enumeration value="Lab"/>
+            <xs:enumeration value="Tutorial"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- A room code, which defines which room its parent slot takes place 
+            in.............................................................. -->
+    <xs:simpleType name="roomCodeType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9A-Z]{3,4}-[0-9A-Z]{3,4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- .......................................................................
+    ..  Structure
+    ........................................................................ -->
+    
     <!-- The root timetable element, containing days, periods, and courses.. -->
     <xs:element name="timetable">
         <xs:complexType>
@@ -17,7 +68,7 @@
     </xs:element>
     
     <!-- .......................................................................
-    ..  Day-Related Definitions
+    ..  Days Structure
     ........................................................................ -->
     
     <!-- A days element, which contains a list of days...................... -->
@@ -35,18 +86,6 @@
         <xs:attribute name="which" type="dayCodeType"/>
     </xs:complexType>
     
-    <!-- A day which attribute, which identifies which day of the week its day 
-            element is modelling............................................ -->
-    <xs:simpleType name="dayCodeType">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="Monday"/>
-            <xs:enumeration value="Tuesday"/>
-            <xs:enumeration value="Wednesday"/>
-            <xs:enumeration value="Thursday"/>
-            <xs:enumeration value="Friday"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
     <!-- A dayslot element, which contains data for a particular timetable slot
             inside a day element............................................ -->
     <xs:complexType name="dayslotType">
@@ -59,48 +98,14 @@
         <xs:attribute name="course" type="courseCodeType"/>
     </xs:complexType>
     
-    <!-- A period property, which defines which period its parent slot takes 
-            place during.................................................... -->
-    <xs:simpleType name="periodCodeType">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="[012][0-9][0-5][0-9]"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <!-- A course property, which defines which course its parent slot 
-            contains........................................................ -->
-    <xs:simpleType name="courseCodeType">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="[A-Z]{4}[0-9]{4}"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <!-- A type property, which defines what type of timetable slot its parent 
-            is.............................................................. -->
-    <xs:simpleType name="typeCodeType">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="Lecture"/>
-            <xs:enumeration value="Lab"/>
-            <xs:enumeration value="Tutorial"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <!-- A room property, which defines which room its parent slot takes place 
-            in.............................................................. -->
-    <xs:simpleType name="roomCodeType">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9A-Z]{3,4}-[0-9A-Z]{3,4}"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
     <!-- .......................................................................
-    ..  Period-Related Definitions
+    ..  Periods Structure
     ........................................................................ -->
     
     
     
     <!-- .......................................................................
-    ..  Course-Related Definitions
+    ..  Courses Structure
     ........................................................................ -->
     
     
