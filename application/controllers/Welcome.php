@@ -12,9 +12,6 @@ class Welcome extends Application
         $this->data['welcome_days'] = $this->welcome_days();
         $this->data['welcome_periods'] = $this->welcome_periods();
         $this->data['welcome_courses'] = $this->welcome_courses();
-<<<<<<< HEAD
-
-=======
         $this->data['welcome_xmlvalid'] = $this->welcome_xmlvalid();
         
         // Build form.
@@ -39,7 +36,6 @@ class Welcome extends Application
         
         // Build form.
         $this->data['welcome_search'] = $this->welcome_search();
-
         // Get search parameters.
         $searchDay = $this->input->post('searchDay');
         $searchPeriod = $this->input->post('searchPeriod');
@@ -117,7 +113,6 @@ class Welcome extends Application
             } 
         }
         
->>>>>>> refs/remotes/DogsToTheMax/develop
         // Render.
         $this->data['pagebody'] = 'welcome';
         $this->render();
