@@ -29,7 +29,7 @@
         </periodslot>
     </period>
     <period which="1030">
-        <periodslot day="Monday" course="ACIT4850">
+        <periodslot day="Monday" course="ACIT4650">
             <type>Lab</type>
             <instructor>Medhat Elmasry</instructor>
             <room>SE12-306</room>
@@ -46,7 +46,7 @@
         </periodslot>
     </period>
     <period which="1130">
-        <periodslot day="Monday" course="ACIT4850">
+        <periodslot day="Monday" course="ACIT4650">
             <type>Lab</type>
             <instructor>Medhat Elmasry</instructor>
             <room>SE12-306</room>

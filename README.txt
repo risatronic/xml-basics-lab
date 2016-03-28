@@ -19,14 +19,19 @@ Doig, Marisa:
 Fernandez de Arteaga, Erick:
     - Master XML (/data/timetable.xml)
     - Master DTD (/data/timetable.dtd)
+    - Master Schema (/data/timetable.xsd)
     - Days XML (/data/days.xml)
     - Timetable model (/application/models/Timetable.php)
     - Welcome controller (/application/controllers/welcome.php)
     - _template view (/application/views/_template.php)
-    - Welcome view (/application/views/welcome.php)
-    - Welcome_days view fragment (/application/views/welcome_days.php)
-    - Welcome_periods view fragment (/application/views/welcome_periods.php)
-    - Welcome_courses view fragment (/application/views/welcome_courses.php)
+    - welcome view (/application/views/welcome.php)
+    - welcome_days view fragment (/application/views/welcome_days.php)
+    - welcome_periods view fragment (/application/views/welcome_periods.php)
+    - welcome_courses view fragment (/application/views/welcome_courses.php)
+    - welcome_search view fragment (/applications/views/welcome_search.php)
+    - welcome_bingo view fragment (/applications/views/welcome_bingo.php)
+    - welcome_nobingo view fragment (/applications/views/welcome_nobingo.php)
+    - welcome_xmlvalid view fragment (/applications/views/welcome_xmlvalid.php)
     - Main CSS file (/assets/css/main.css)
 
 --------------------------------------------------------------------------------

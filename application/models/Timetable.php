@@ -92,6 +92,7 @@ class Timetable extends CI_Model
         return $this->courses;
     }
     
+<<<<<<< HEAD
     /**
      * Returns the array of dayNames
      */
@@ -106,6 +107,168 @@ class Timetable extends CI_Model
     public function getPeriodTimes()
     {
         return $this->periodTimes;
+=======
+    //--------------------------------------------------------------------------
+    //  List Builders
+    //--------------------------------------------------------------------------
+    
+    /**
+     * Gets a list of all weekdays.
+     */
+    public function getDayList()
+    {
+        $dayList = array(
+            'Monday' => array(
+                'value' => 'Monday'
+            ),
+            'Tuesday' => array(
+                'value' => 'Tuesday'
+            ),
+            'Wednesday' => array(
+                'value' => 'Wednesday'
+            ),
+            'Thursday' => array(
+                'value' => 'Thursday'
+            ),
+            'Friday' => array(
+                'value' => 'Friday'
+            )
+        );
+        
+        return $dayList;
+    }
+    
+    /**
+     * Gets a list of a few periods.
+     */
+    public function getPeriodList()
+    {
+        $periodList = array(
+            '0830' => array(
+                'value' => '0830'
+            ),
+            '0930' => array(
+                'value' => '0930'
+            ),
+            '1030' => array(
+                'value' => '1030'
+            ),
+            '1130' => array(
+                'value' => '1130'
+            ),
+            '1230' => array(
+                'value' => '1230'
+            ),
+            '1330' => array(
+                'value' => '1330'
+            ),
+            '1430' => array(
+                'value' => '1430'
+            ),
+            '1530' => array(
+                'value' => '1530'
+            ),
+            '1630' => array(
+                'value' => '1630'
+            ),
+        );
+        
+        return $periodList;
+    }
+    
+    //--------------------------------------------------------------------------
+    //  Search Methods
+    //--------------------------------------------------------------------------
+    
+    /**
+     * Search the days array for a particular timeslot.
+     */
+    public function searchDays($searchDay, $searchPeriod)
+    {
+        // Check each dayslot for a match and return if so.
+        foreach ($this->days as $record)
+        {
+            if ($record->day === $searchDay && 
+                    $record->period === $searchPeriod)
+            {
+                return $record;
+            }
+        }
+        
+        // If no match, return null.
+        return null;
+    }
+    
+    /**
+     * Search the periods array for a particular timeslot.
+     */
+    public function searchPeriods($searchDay, $searchPeriod)
+    {
+        // Check each periodslot for a match and return if so.
+        foreach ($this->periods as $record)
+        {
+            if ($record->day === $searchDay && 
+                    $record->period === $searchPeriod)
+            {
+                return $record;
+            }
+        }
+        
+        // If no match, return null.
+        return null;
+    }
+    
+    /**
+     * Search the courses array for a particular timeslot.
+     */
+    public function searchCourses($searchDay, $searchPeriod)
+    {
+        // Check each dayslot for a match and return if so.
+        foreach ($this->courses as $record)
+        {
+            if ($record->day === $searchDay && 
+                    $record->period === $searchPeriod)
+            {
+                return $record;
+            }
+        }
+        
+        // If no match, return null.
+        return null;
+    }
+    
+    //--------------------------------------------------------------------------
+    //  Search Methods
+    //--------------------------------------------------------------------------
+    
+    public function validateTimetable()
+    {
+        // Get the XML document properties.
+        $doc = new DOMDocument();
+        $doc->load('./data/timetable.xml');
+        $element = $doc->documentElement;
+        $schema = './data/timetable.xsd';
+        
+        // Use internal errors.
+        libxml_use_internal_errors(true);
+        
+        // Validate XML schema. If validation goes through, return a happy 
+        // message. Else, return the list of errors.
+        if ($doc->schemaValidate($schema))
+        {
+            $result =  array('Yeehaw! Yer XML done val-uh-dated!');
+        }
+        else
+        {
+            $result = array('Shoot! Yer XML dinna val-uh-date, son!<br/>');
+            foreach (libxml_get_errors() as $error) 
+            {
+                $result[] = $error->message;
+            }
+        }
+        
+        return $result;
+>>>>>>> refs/remotes/DogsToTheMax/develop
     }
 }
 
@@ -127,6 +290,10 @@ class Slot extends CI_Model
     public $instructor; // Course instructor.
     public $room;       // Classroom.
     
+    //--------------------------------------------------------------------------
+    //  Constructors
+    //--------------------------------------------------------------------------
+    
     public function __construct($slot, $container)
     {
         // Set the slot values from the XML elements provided.
@@ -141,5 +308,28 @@ class Slot extends CI_Model
         $this->type = (String) $slot->type;
         $this->instructor = (String) $slot->instructor;
         $this->room = (String) $slot->room;
+    }
+    
+    //--------------------------------------------------------------------------
+    //  Utilities
+    //--------------------------------------------------------------------------
+    
+    /**
+     * Compares the current Slot object to one provided as a parameter. Returns
+     * true if all of the variable values are equal and false otherwise.
+     */
+    public function equals($otherSlot)
+    {
+        if(     $this->day === $otherSlot->day &&
+                $this->period === $otherSlot->period &&
+                $this->course === $otherSlot->course &&
+                $this->type === $otherSlot->type &&
+                $this->instructor === $otherSlot->instructor &&
+                $this->room === $otherSlot->room)
+        {
+            return true;
+        }
+        
+        return false;
     }
 }

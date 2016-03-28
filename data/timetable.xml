@@ -1,13 +1,390 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE timetable SYSTEM "timetable.dtd" 
-    [
-    <!ENTITY days SYSTEM "days.xml">
-    <!ENTITY periods SYSTEM "periods.xml">
-    <!ENTITY courses SYSTEM "courses.xml">
-]>
+<?xml version="1.0" encoding="UTF-8" ?>
 
-<timetable>
-    &days;
-    &periods;
-    &courses;
+<!-- ACIT 44 Timetable, organized a few diffrent ways....................... -->
+<timetable
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="timetable.xsd">
+    
+<!-- Timetable grouped by day............................................... -->
+<days>
+    <day which="Monday">
+        <dayslot period="1030" course="ACIT4650">
+            <type>Lab</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SE12-306</room>
+        </dayslot>
+        <dayslot period="1130" course="ACIT4650">
+            <type>Lab</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SE12-306</room>
+        </dayslot>
+        <dayslot period="1530" course="ACIT4910">
+            <type>Lecture</type>
+            <instructor>Richard Chau</instructor>
+            <room>SW9-206</room>
+        </dayslot>
+        <dayslot period="1630" course="ACIT4650">
+            <type>Lecture</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SE6-205</room>
+        </dayslot>
+    </day>
+    <day which="Tuesday">
+        <dayslot period="0830" course="ACIT4620">
+            <type>Lab</type>
+            <instructor>Bethany Edmunds</instructor>
+            <room>SE12-306</room>
+        </dayslot>
+        <dayslot period="0930" course="ACIT4620">
+            <type>Lab</type>
+            <instructor>Bethany Edmunds</instructor>
+            <room>SE12-306</room>
+        </dayslot>
+        <dayslot period="1230" course="ACIT4650">
+            <type>Lecture</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SW9-206</room>
+        </dayslot>
+        <dayslot period="1530" course="ACIT4620">
+            <type>Lecture</type>
+            <instructor>Bethany Edmunds</instructor>
+            <room>SW3-3615</room>
+        </dayslot>
+        <dayslot period="1630" course="ACIT4620">
+            <type>Lecture</type>
+            <instructor>Bethany Edmunds</instructor>
+            <room>SW3-3615</room>
+        </dayslot>
+    </day>
+    <day which="Wednesday">
+        <dayslot period="1230" course="ACIT4850">
+            <type>Lecture</type>
+            <instructor>James Parry</instructor>
+            <room>SW3-1750</room>
+        </dayslot>
+        <dayslot period="1330" course="ACIT4850">
+            <type>Lecture</type>
+            <instructor>James Parry</instructor>
+            <room>SW3-1750</room>
+        </dayslot>
+    </day>
+    <day which="Thursday">
+        <dayslot period="0930" course="ACIT4910">
+            <type>Lecture</type>
+            <instructor>Richard Chau</instructor>
+            <room>SW5-1840</room>
+        </dayslot>
+        <dayslot period="1030" course="ACIT4910">
+            <type>Lab</type>
+            <instructor>Richard Chau</instructor>
+            <room>SE12-306</room>
+        </dayslot>
+        <dayslot period="1130" course="ACIT4910">
+            <type>Lab</type>
+            <instructor>Richard Chau</instructor>
+            <room>SE12-306</room>
+        </dayslot>
+        <dayslot period="1330" course="ACIT4850">
+            <type>Lab</type>
+            <instructor>James Parry</instructor>
+            <room>SE12-308</room>
+        </dayslot>
+        <dayslot period="1430" course="ACIT4850">
+            <type>Lab</type>
+            <instructor>James Parry</instructor>
+            <room>SE12-308</room>
+        </dayslot>
+    </day>
+    <day which="Friday">
+        <dayslot period="0830" course="ACIT4660">
+            <type>Lecture</type>
+            <instructor>Steve Fabiszewski</instructor>
+            <room>SW9-206</room>
+        </dayslot>
+        <dayslot period="0930" course="ACIT4660">
+            <type>Lecture</type>
+            <instructor>Steve Fabiszewski</instructor>
+            <room>SW9-206</room>
+        </dayslot>
+        <dayslot period="1030" course="ACIT4770">
+            <type>Tutorial</type>
+            <instructor>Trevor Lord</instructor>
+            <room>SE12-306</room>
+        </dayslot>
+        <dayslot period="1130" course="ACIT4770">
+            <type>Tutorial</type>
+            <instructor>Trevor Lord</instructor>
+            <room>SE12-306</room>
+        </dayslot>
+        <dayslot period="1330" course="ACIT4660">
+            <type>Lab</type>
+            <instructor>Steve Fabiszewski</instructor>
+            <room>SE12-306</room>
+        </dayslot>
+        <dayslot period="1430" course="ACIT4660">
+            <type>Lab</type>
+            <instructor>Steve Fabiszewski</instructor>
+            <room>SE12-306</room>
+        </dayslot>
+    </day>
+</days>
+
+<!-- Timetable grouped by period............................................ -->
+<periods>
+    <period which="0830">
+        <periodslot day="Tuesday" course="ACIT4620">
+            <type>Lab</type>
+            <instructor>Bethany Edmunds</instructor>
+            <room>SE12-306</room>
+        </periodslot>
+        <periodslot day="Friday" course="ACIT4660">
+            <type>Lecture</type>
+            <instructor>Steve Fabiszewski</instructor>
+            <room>SW9-206</room>
+        </periodslot>
+    </period>
+    <period which="0930">
+        <periodslot day="Tuesday" course="ACIT4620">
+            <type>Lab</type>
+            <instructor>Bethany Edmunds</instructor>
+            <room>SE12-306</room>
+        </periodslot>
+        <periodslot day="Thursday" course="ACIT4910">
+            <type>Lecture</type>
+            <instructor>Richard Chau</instructor>
+            <room>SW5-1840</room>
+        </periodslot>
+        <periodslot day="Friday" course="ACIT4660">
+            <type>Lecture</type>
+            <instructor>Steve Fabiszewski</instructor>
+            <room>SW9-206</room>
+        </periodslot>
+    </period>
+    <period which="1030">
+        <periodslot day="Monday" course="ACIT4650">
+            <type>Lab</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SE12-306</room>
+        </periodslot>
+        <periodslot day="Thursday" course="ACIT4910">
+            <type>Lab</type>
+            <instructor>Richard Chau</instructor>
+            <room>SE12-306</room>
+        </periodslot>
+        <periodslot day="Friday" course="ACIT4770">
+            <type>Tutorial</type>
+            <instructor>Trevor Lord</instructor>
+            <room>SE12-306</room>
+        </periodslot>
+    </period>
+    <period which="1130">
+        <periodslot day="Monday" course="ACIT4650">
+            <type>Lab</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SE12-306</room>
+        </periodslot>
+        <periodslot day="Thursday" course="ACIT4910">
+            <type>Lab</type>
+            <instructor>Richard Chau</instructor>
+            <room>SE12-306</room>
+        </periodslot>
+        <periodslot day="Friday" course="ACIT4770">
+            <type>Tutorial</type>
+            <instructor>Trevor Lord</instructor>
+            <room>SE12-306</room>
+        </periodslot>
+    </period>
+    <period which="1230">
+        <periodslot day="Tuesday" course="ACIT4650">
+            <type>Lecture</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SW9-206</room>
+        </periodslot>
+        <periodslot day="Wednesday" course="ACIT4850">
+            <type>Lecture</type>
+            <instructor>James Parry</instructor>
+            <room>SW3-1750</room>
+        </periodslot>
+    </period>
+    <period which="1330">
+        <periodslot day="Wednesday" course="ACIT4850">
+            <type>Lecture</type>
+            <instructor>James Parry</instructor>
+            <room>SW3-1750</room>
+        </periodslot>
+        <periodslot day="Thursday" course="ACIT4850">
+            <type>Lab</type>
+            <instructor>James Parry</instructor>
+            <room>SE12-308</room>
+        </periodslot>
+        <periodslot day="Friday" course="ACIT4660">
+            <type>Lab</type>
+            <instructor>Steve Fabiszewski</instructor>
+            <room>SE12-306</room>
+        </periodslot>
+    </period>
+    <period which="1430">
+        <periodslot day="Thursday" course="ACIT4850">
+            <type>Lab</type>
+            <instructor>James Parry</instructor>
+            <room>SE12-308</room>
+        </periodslot>
+        <periodslot day="Friday" course="ACIT4660">
+            <type>Lab</type>
+            <instructor>Steve Fabiszewski</instructor>
+            <room>SE12-306</room>
+        </periodslot>
+    </period>
+    <period which="1530">
+        <periodslot day="Monday" course="ACIT4910">
+            <type>Lecture</type>
+            <instructor>Richard Chau</instructor>
+            <room>SW9-206</room>
+        </periodslot>
+        <periodslot day="Tuesday" course="ACIT4620">
+            <type>Lecture</type>
+            <instructor>Bethany Edmunds</instructor>
+            <room>SW3-3615</room>
+        </periodslot>
+    </period>
+    <period which="1630">
+        <periodslot day="Monday" course="ACIT4650">
+            <type>Lecture</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SE6-205</room>
+        </periodslot>
+        <periodslot day="Tuesday" course="ACIT4620">
+            <type>Lecture</type>
+            <instructor>Bethany Edmunds</instructor>
+            <room>SW3-3615</room>
+        </periodslot>
+    </period>
+</periods>
+
+<!-- Timetable grouped by course............................................ -->
+<courses>
+    <course which="ACIT4620">
+        <courseslot day="Tuesday" period="0830">
+            <type>Lab</type>
+            <instructor>Bethany Edmunds</instructor>
+            <room>SE12-306</room>
+        </courseslot>
+        <courseslot day="Tuesday" period="0930">
+            <type>Lab</type>
+            <instructor>Bethany Edmunds</instructor>
+            <room>SE12-306</room>
+        </courseslot>
+        <courseslot day="Tuesday" period="1530">
+            <type>Lecture</type>
+            <instructor>Bethany Edmunds</instructor>
+            <room>SW3-3615</room>
+        </courseslot>
+        <courseslot day="Tuesday" period="1630">
+            <type>Lecture</type>
+            <instructor>Bethany Edmunds</instructor>
+            <room>SW3-3615</room>
+        </courseslot>
+    </course>
+    <course which="ACIT4650">
+        <courseslot day="Monday" period="1030">
+            <type>Lab</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SE12-306</room>
+        </courseslot>
+        <courseslot day="Monday" period="1130">
+            <type>Lab</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SE12-306</room>
+        </courseslot>
+        <courseslot day="Monday" period="1630">
+            <type>Lecture</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SE6-205</room>
+        </courseslot>
+        <courseslot day="Tuesday" period="1230">
+            <type>Lecture</type>
+            <instructor>Medhat Elmasry</instructor>
+            <room>SW9-206</room>
+        </courseslot>
+    </course>
+    <course which="ACIT4660">
+        <courseslot day="Friday" period="0830">
+            <type>Lecture</type>
+            <instructor>Steve Fabiszewski</instructor>
+            <room>SW9-206</room>
+        </courseslot>
+        <courseslot day="Friday" period="0930">
+            <type>Lecture</type>
+            <instructor>Steve Fabiszewski</instructor>
+            <room>SW9-206</room>
+        </courseslot>
+        <courseslot day="Friday" period="1330">
+            <type>Lab</type>
+            <instructor>Steve Fabiszewski</instructor>
+            <room>SE12-306</room>
+        </courseslot>
+        <courseslot day="Friday" period="1430">
+            <type>Lab</type>
+            <instructor>Steve Fabiszewski</instructor>
+            <room>SE12-306</room>
+        </courseslot>
+    </course>
+    <course which="ACIT4770">
+        <courseslot day="Friday" period="1030">
+            <type>Tutorial</type>
+            <instructor>Trevor Lord</instructor>
+            <room>SE12-306</room>
+        </courseslot>
+        <courseslot day="Friday" period="1130">
+            <type>Tutorial</type>
+            <instructor>Trevor Lord</instructor>
+            <room>SE12-306</room>
+        </courseslot>
+    </course>
+    <course which="ACIT4850">
+        <courseslot day="Wednesday" period="1230">
+            <type>Lecture</type>
+            <instructor>James Parry</instructor>
+            <room>SW3-1750</room>
+        </courseslot>
+        <courseslot day="Wednesday" period="1330">
+            <type>Lecture</type>
+            <instructor>James Parry</instructor>
+            <room>SW3-1750</room>
+        </courseslot>
+        <courseslot day="Thursday" period="1330">
+            <type>Lab</type>
+            <instructor>James Parry</instructor>
+            <room>SE12-308</room>
+        </courseslot>
+        <courseslot day="Thursday" period="1430">
+            <type>Lab</type>
+            <instructor>James Parry</instructor>
+            <room>SE12-308</room>
+        </courseslot>
+    </course>
+    <course which="ACIT4910">
+        <courseslot day="Monday" period="1530">
+            <type>Lecture</type>
+            <instructor>Richard Chau</instructor>
+            <room>SW9-206</room>
+        </courseslot>
+        <courseslot day="Thursday" period="0930">
+            <type>Lecture</type>
+            <instructor>Richard Chau</instructor>
+            <room>SW5-1840</room>
+        </courseslot>
+        <courseslot day="Thursday" period="1030">
+            <type>Lab</type>
+            <instructor>Richard Chau</instructor>
+            <room>SE12-306</room>
+        </courseslot>
+        <courseslot day="Thursday" period="1130">
+            <type>Lab</type>
+            <instructor>Richard Chau</instructor>
+            <room>SE12-306</room>
+        </courseslot>
+    </course>
+</courses>
+
 </timetable>
