@@ -102,12 +102,64 @@
     ..  Periods Structure
     ........................................................................ -->
     
+    <!-- A periods element, which contains a list of periods...................... -->
+    <xs:complexType name="periodsType">
+        <xs:sequence>
+            <xs:element name="period" type="periodType" maxOccurs="9"/>
+        </xs:sequence>
+    </xs:complexType>
     
+    <!-- A period element, which contains all of the periodslots for that period, 
+            ie. what is in that period over whichever days    -->
+    <xs:complexType name="periodType">
+        <xs:sequence>
+            <xs:element name="periodslot" type="periodslotType" maxOccurs="5"/>
+        </xs:sequence>
+        <xs:attribute name="which" type="periodCodeType"/>
+    </xs:complexType>
+    
+    <!-- A periodslot element, which contains data for a particular period slot
+            inside a period element............................................ -->
+    <xs:complexType name="periodslotType">
+        <xs:sequence>
+            <xs:element name="type" type="typeCodeType"/>
+            <xs:element name="instructor" type="xs:string"/>
+            <xs:element name="room" type="roomCodeType"/>
+        </xs:sequence>
+        <xs:attribute name="day" type="dayCodeType"/>
+        <xs:attribute name="course" type="courseCodeType"/>
+    </xs:complexType>
     
     <!-- .......................................................................
     ..  Courses Structure
     ........................................................................ -->
     
+        <!-- A courses element, which contains a list of courses...................... -->
+    <xs:complexType name="coursesType">
+        <xs:sequence>
+            <xs:element name="course" type="courseType" maxOccurs="6"/>
+        </xs:sequence>
+    </xs:complexType>
     
+    <!-- A course element, which contains all of the courseslots for that course, 
+            ie. where that course falls over days/periods    -->
+    <xs:complexType name="courseType">
+        <xs:sequence>
+            <xs:element name="courseslot" type="courseslotType" maxOccurs="4"/>
+        </xs:sequence>
+        <xs:attribute name="which" type="courseCodeType"/>
+    </xs:complexType>
+    
+    <!-- A courseslot element, which contains data for a particular course slot
+            inside a course element............................................ -->
+    <xs:complexType name="courseslotType">
+        <xs:sequence>
+            <xs:element name="type" type="typeCodeType"/>
+            <xs:element name="instructor" type="xs:string"/>
+            <xs:element name="room" type="roomCodeType"/>
+        </xs:sequence>
+        <xs:attribute name="day" type="dayCodeType"/>
+        <xs:attribute name="period" type="periodCodeType"/>
+    </xs:complexType>
     
 </xs:schema>

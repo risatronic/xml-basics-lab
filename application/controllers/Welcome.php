@@ -36,7 +36,6 @@ class Welcome extends Application
         
         // Build form.
         $this->data['welcome_search'] = $this->welcome_search();
-
         // Get search parameters.
         $searchDay = $this->input->post('searchDay');
         $searchPeriod = $this->input->post('searchPeriod');

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Model for a timetable XML document.
  *
@@ -240,11 +239,9 @@ class Timetable extends CI_Model
         return $result;
     }
 }
-
 //==============================================================================
 //  Slot Classes
 //==============================================================================
-
 /**
  * Model for a slot of any type (day, period, or course).
  *
