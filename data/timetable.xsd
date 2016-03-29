@@ -137,7 +137,7 @@
         <!-- A courses element, which contains a list of courses...................... -->
     <xs:complexType name="coursesType">
         <xs:sequence>
-            <xs:element name="course" type="courseType" maxOccurs="6"/>
+            <xs:element name="course" type="courseType" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     
@@ -145,7 +145,7 @@
             ie. where that course falls over days/periods    -->
     <xs:complexType name="courseType">
         <xs:sequence>
-            <xs:element name="courseslot" type="courseslotType" maxOccurs="4"/>
+            <xs:element name="courseslot" type="courseslotType" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute name="which" type="courseCodeType"/>
     </xs:complexType>
