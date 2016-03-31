@@ -16,6 +16,7 @@ Doig, Marisa:
     - Courses XML (/data/courses.xml)
     - Periods XML (/data/periods.xml)
     - Master Schema (/data/timetable.xsd)
+    - Days XML Stylesheet (/data/timetableDays.xls)
 
 Fernandez de Arteaga, Erick:
     - Master XML (/data/timetable.xml)
